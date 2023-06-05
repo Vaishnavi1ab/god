@@ -11,6 +11,20 @@ AFRAME.registerComponent("car-model", {
     this.el.setAttribute("rotation", rotation);
   },
   
+    update:function(){
+    window.addEventListener("click",e=>{
+      this.data.clickCounter= this.data.clickCounter+1;
+      if(this.data.clickCounter===1){
+        const rotation={x:0,y:20,z:90};
+        this.el.setAttribute("rotation", rotation);
+
+      }else if(this.data.clickCounter===2)
+      {
+        const rotation={x:0,y:100,z:0}
+      }
+    })
+  }
+  
     
   
 });
